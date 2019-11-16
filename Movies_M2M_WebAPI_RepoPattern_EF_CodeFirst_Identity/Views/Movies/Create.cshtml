@@ -1,0 +1,85 @@
+﻿@model MVC_EF_Identity.ViewModels.MovieViewModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Movie</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Movie.Name" class="control-label"></label>
+                <input asp-for="Movie.Name" class="form-control" />
+                <span asp-validation-for="Movie.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Movie.ReleaseDate" class="control-label"></label>
+                <input asp-for="Movie.ReleaseDate" class="form-control" />
+                <span asp-validation-for="Movie.ReleaseDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Movie.Genre" class="control-label"></label>
+                <select asp-for="Movie.Genre" class="form-control"
+                        asp-items="Html.GetEnumSelectList<Genre>()">
+                    <option value="" selected="selected" disabled="disabled">
+                        --Please select--
+                    </option>
+                </select>
+                <span asp-validation-for="Movie.Genre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Movie.Rating" class="control-label"></label>
+                <input asp-for="Movie.Rating" class="form-control" />
+                <span asp-validation-for="Movie.Rating" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Actors" class="control-label"></label>
+                @*@foreach (var actor in Model.Actors)
+        {
+            <input type="checkbox" value="@actor.Value" name="Actors" required
+                   class="form-check-input" asp-for="@actor.Selected" />
+            <label class="control-label">@actor.Text</label>
+        }*@
+
+                @for (int i = 0; i < Model.Actors.Count(); i++)
+                {
+                    @*@Html.HiddenFor(m => Model.Actors[i].Text)
+                    @Html.HiddenFor(m => Model.Actors[i].Value)
+                    @Html.CheckBoxFor(m => Model.Actors[i].Selected) @(Model.Actors[i].Text)<br />*@
+
+                    <input type="hidden" asp-for="@Model.Actors[i].Text" />
+                    <input type="hidden" asp-for="@Model.Actors[i].Value" />
+                    <input type="checkbox"
+                           class="form-check-input" asp-for="@Model.Actors[i].Selected" />
+                    <label class="control-label">@Model.Actors[i].Text</label>
+                }
+
+                @*@foreach (var actor in Model.Actors)
+        {
+            @Html.HiddenFor(m => actor.Text)
+            @Html.HiddenFor(m => actor.Value)
+            @Html.CheckBoxFor(m => actor.Selected); //new { name = "Actors", value = actor.Value }
+            <label class="control-label">@actor.Text</label>
+        }*@
+
+                <span asp-validation-for="Actors" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

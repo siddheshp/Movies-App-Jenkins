@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29503.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Movies_M2M_WebAPI_RepoPattern_EF_CodeFirst_Identity", "Movies_M2M_WebAPI_RepoPattern_EF_CodeFirst_Identity\Movies_M2M_WebAPI_RepoPattern_EF_CodeFirst_Identity.csproj", "{D6F09CC7-446C-403D-8B3F-B37856DFD102}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D6F09CC7-446C-403D-8B3F-B37856DFD102}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6F09CC7-446C-403D-8B3F-B37856DFD102}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6F09CC7-446C-403D-8B3F-B37856DFD102}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6F09CC7-446C-403D-8B3F-B37856DFD102}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A5EE34B4-17A9-442E-AB56-1ABDAFFF0AE4}
+	EndGlobalSection
+EndGlobal
